@@ -5,13 +5,14 @@
     <br />
     icon:<IconCommunity />
     <br />
-    store:{{ this.$store.getters.count }}
+    store:{{ $store.getters.count }}
     <br />
     ElementUI:<el-button>按钮</el-button>
   </div>
 </template>
 <script>
 import IconCommunity from '@/components/icons/IconCommunity';
+
 export default {
   name: '',
   components: {

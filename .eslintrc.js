@@ -16,6 +16,7 @@ module.exports = defineConfig({
     allowImportExportEverywhere: true,
     ecmaFeatures: {
       jsx: true,
+      modules: true,
     },
   },
   extends: [
@@ -90,6 +91,18 @@ module.exports = defineConfig({
     'arrow-spacing': 'error',
     // 只强制对象解构，不强制数组解构
     'prefer-destructuring': ['error', { object: true, array: false }],
+    // 忽略未使用的变量
+    'no-unused-vars': ['error', { ignoreRestSiblings: true }],
+    // 关闭一些个人配置
+    'import/order': 'off',
+    'prefer-promise-reject-errors': 'off',
+    eqeqeq: 'off',
+    'func-names': 'off',
+    radix: 'off',
+    'prefer-regex-literals': 'off',
+    'prefer-rest-params': 'off',
+    'guard-for-in': 'off',
+    'no-multi-assign': 'off',
   },
   overrides: [
     {

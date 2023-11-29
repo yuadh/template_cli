@@ -14,8 +14,8 @@
     "preview": "vite preview --port 4173",
     "lint": "eslint --ext .vue,.js,.jsx,.ts,.tsx ./ --max-warnings 0 --cache --cache-location node_modules/.cache/eslint/",
     "lint:fix": "eslint --ext .vue,.js,jsx,.ts,.tsx ./ --max-warnings 0 --cache --cache-location node_modules/.cache/eslint/ --fix",
-    "stylelint": "stylelint src/**/*.{html,vue,sass,scss,less} --cache --cache-location node_modules/.cache/stylelint/",
-    "stylelint:fix": "stylelint src/**/*.{html,vue,sass,scss,less} --cache --cache-location node_modules/.cache/stylelint/ --fix",
+    "stylelint": "stylelint src/**/*.{html,vue,sass,scss,less,css} --cache --cache-location node_modules/.cache/stylelint/",
+    "stylelint:fix": "stylelint src/**/*.{html,vue,sass,scss,less,css} --cache --cache-location node_modules/.cache/stylelint/ --fix",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -46,6 +46,7 @@
     "prettier": "^2.8.8",
     "stylelint": "^15.6.3",
     "stylelint-config-html": "^1.1.0",
+    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recess-order": "^4.0.0",
     "stylelint-config-standard": "^33.0.0",
     "stylelint-less": "^1.0.6",
@@ -60,23 +61,20 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
     "*.vue": [
       "prettier --write",
       "eslint --fix",
       "stylelint --fix"
     ],
-    "*.{html,sass,scss,less}": [
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{sass,scss,less,css}": [
       "prettier --write",
       "stylelint --fix"
     ],
-    "package.json": [
-      "prettier --write"
-    ],
-    "*.md": [
+    "*.{md,json,yml,html,yaml}": [
       "prettier --write"
     ]
   },

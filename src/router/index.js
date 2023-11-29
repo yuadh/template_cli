@@ -7,10 +7,9 @@ Vue.use(VueRouter);
 
 const routes = [...demoRouters];
 
-
 // 防止连续点击多次路由报错
-let routerPush = VueRouter.prototype.push;
-let routerReplace = VueRouter.prototype.replace;
+const routerPush = VueRouter.prototype.push;
+const routerReplace = VueRouter.prototype.replace;
 // push
 VueRouter.prototype.push = function push(location) {
   return routerPush.call(this, location).catch((err) => err);
